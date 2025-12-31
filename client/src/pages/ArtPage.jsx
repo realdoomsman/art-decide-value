@@ -62,7 +62,13 @@ function ArtPage() {
       .select()
       .single()
     
-    if (!error && data) {
+    if (error) {
+      console.error('Comment error:', error)
+      alert('Failed to post comment: ' + error.message)
+      return
+    }
+    
+    if (data) {
       setComments([...comments, data])
       setNewComment('')
     }
