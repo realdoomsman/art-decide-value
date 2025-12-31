@@ -8,6 +8,7 @@ function ArtPage() {
   const [art, setArt] = useState(null)
   const [comments, setComments] = useState([])
   const [newComment, setNewComment] = useState('')
+  const [commentName, setCommentName] = useState('')
   const [hasLiked, setHasLiked] = useState(false)
 
   useEffect(() => {
@@ -56,7 +57,7 @@ function ArtPage() {
       .from('comments')
       .insert({
         artwork_id: id,
-        username: 'Anonymous',
+        username: commentName.trim() || 'Anonymous',
         text: newComment
       })
       .select()
@@ -71,6 +72,7 @@ function ArtPage() {
     if (data) {
       setComments([...comments, data])
       setNewComment('')
+      setCommentName('')
     }
   }
 
@@ -106,6 +108,13 @@ function ArtPage() {
           <h2>Comments</h2>
           
           <div className="comment-input">
+            <input
+              type="text"
+              placeholder="Name (optional)"
+              value={commentName}
+              onChange={(e) => setCommentName(e.target.value)}
+              maxLength={30}
+            />
             <textarea
               placeholder="Add a comment..."
               value={newComment}
