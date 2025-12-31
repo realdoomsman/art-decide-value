@@ -27,7 +27,7 @@ function HallOfFamePage() {
     <div className="hall-of-fame-page">
       <div className="hof-header">
         <h1>Hall of Fame</h1>
-        <p>The most loved artworks. The top 30 images will be added to an official NFT collection.</p>
+        <p>The most loved artworks. The top 100 images will be added to an official NFT collection.</p>
       </div>
 
       <div className="hof-grid">

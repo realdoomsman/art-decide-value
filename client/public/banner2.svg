@@ -1,0 +1,64 @@
+<svg width="1500" height="500" xmlns="http://www.w3.org/2000/svg">
+<rect width="1500" height="500" fill="white"/>
+
+<circle cx="120" cy="80" r="45" fill="#FFD60A"/>
+<circle cx="1380" cy="80" r="45" fill="#FFD60A"/>
+
+<circle cx="200" cy="180" r="40" fill="none" stroke="black" stroke-width="5"/>
+<circle cx="185" cy="170" r="7" fill="black"/>
+<circle cx="218" cy="173" r="6" fill="black"/>
+<path d="M182 195 Q200 218 220 193" stroke="black" stroke-width="4" fill="none"/>
+<line x1="200" y1="220" x2="200" y2="310" stroke="black" stroke-width="5"/>
+<line x1="200" y1="260" x2="150" y2="235" stroke="black" stroke-width="5"/>
+<line x1="200" y1="260" x2="255" y2="240" stroke="black" stroke-width="5"/>
+<line x1="200" y1="310" x2="155" y2="400" stroke="black" stroke-width="5"/>
+<line x1="200" y1="310" x2="250" y2="395" stroke="black" stroke-width="5"/>
+
+<circle cx="1300" cy="175" r="40" fill="none" stroke="black" stroke-width="5"/>
+<circle cx="1285" cy="165" r="7" fill="black"/>
+<circle cx="1318" cy="168" r="6" fill="black"/>
+<path d="M1283 190 Q1300 215 1320 188" stroke="black" stroke-width="4" fill="none"/>
+<line x1="1300" y1="215" x2="1300" y2="305" stroke="black" stroke-width="5"/>
+<line x1="1300" y1="255" x2="1248" y2="230" stroke="black" stroke-width="5"/>
+<line x1="1300" y1="255" x2="1358" y2="235" stroke="black" stroke-width="5"/>
+<line x1="1300" y1="305" x2="1252" y2="395" stroke="black" stroke-width="5"/>
+<line x1="1300" y1="305" x2="1355" y2="398" stroke="black" stroke-width="5"/>
+
+<text x="750" y="270" font-family="Comic Sans MS, cursive, sans-serif" font-size="72" font-weight="bold" fill="black" text-anchor="middle">DECIDE THE VALUE</text>
+
+<circle cx="100" cy="400" r="14" fill="#FF006E"/>
+<circle cx="85" cy="386" r="11" fill="#FFC6FF"/>
+<circle cx="115" cy="386" r="11" fill="#FFC6FF"/>
+<circle cx="88" cy="414" r="11" fill="#FFC6FF"/>
+<circle cx="112" cy="414" r="11" fill="#FFC6FF"/>
+<line x1="100" y1="414" x2="100" y2="485" stroke="#06FFA5" stroke-width="4"/>
+
+<circle cx="380" cy="420" r="12" fill="#FF006E"/>
+<circle cx="368" cy="408" r="10" fill="#FFC6FF"/>
+<circle cx="392" cy="408" r="10" fill="#FFC6FF"/>
+<circle cx="370" cy="432" r="10" fill="#FFC6FF"/>
+<circle cx="390" cy="432" r="10" fill="#FFC6FF"/>
+<line x1="380" y1="432" x2="380" y2="490" stroke="#06FFA5" stroke-width="4"/>
+
+<circle cx="1120" cy="405" r="14" fill="#FF006E"/>
+<circle cx="1106" cy="391" r="11" fill="#FFC6FF"/>
+<circle cx="1134" cy="391" r="11" fill="#FFC6FF"/>
+<circle cx="1108" cy="419" r="11" fill="#FFC6FF"/>
+<circle cx="1132" cy="419" r="11" fill="#FFC6FF"/>
+<line x1="1120" y1="419" x2="1120" y2="488" stroke="#06FFA5" stroke-width="4"/>
+
+<circle cx="1400" cy="395" r="13" fill="#FF006E"/>
+<circle cx="1387" cy="382" r="10" fill="#FFC6FF"/>
+<circle cx="1413" cy="382" r="10" fill="#FFC6FF"/>
+<circle cx="1389" cy="408" r="10" fill="#FFC6FF"/>
+<circle cx="1411" cy="408" r="10" fill="#FFC6FF"/>
+<line x1="1400" y1="408" x2="1400" y2="480" stroke="#06FFA5" stroke-width="4"/>
+
+<path d="M30 478 Q45 455 60 450" stroke="#06FFA5" stroke-width="4" fill="none"/>
+<path d="M55 480 Q70 457 85 452" stroke="#06FFA5" stroke-width="4" fill="none"/>
+<path d="M280 475 Q295 452 310 447" stroke="#06FFA5" stroke-width="4" fill="none"/>
+<path d="M305 478 Q320 455 335 450" stroke="#06FFA5" stroke-width="4" fill="none"/>
+<path d="M1280 476 Q1295 453 1310 448" stroke="#06FFA5" stroke-width="4" fill="none"/>
+<path d="M1430 478 Q1445 455 1460 450" stroke="#06FFA5" stroke-width="4" fill="none"/>
+<path d="M1455 475 Q1470 452 1485 447" stroke="#06FFA5" stroke-width="4" fill="none"/>
+</svg>

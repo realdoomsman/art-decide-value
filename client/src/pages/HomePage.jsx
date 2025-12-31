@@ -39,7 +39,7 @@ function HomePage() {
           <code className="ca-address">TBA - Coming Soon</code>
           <button onClick={copyCA} className="copy-btn">Copy</button>
         </div>
-        <p className="token-desc">The top 30 most-liked artworks will be minted into an official NFT collection.</p>
+        <p className="token-desc">The top 100 most-liked artworks will be minted into an official NFT collection.</p>
         <Link to="/whitepaper" className="whitepaper-link">Read the Whitepaper</Link>
       </section>
 

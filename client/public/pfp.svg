@@ -1,0 +1,45 @@
+<svg width="400" height="400" viewBox="0 0 400 400" xmlns="http://www.w3.org/2000/svg">
+  <!-- Paper background -->
+  <rect width="400" height="400" fill="#FFF"/>
+  
+  <!-- Messy crayon sun -->
+  <circle cx="320" cy="80" r="35" fill="#FFD60A"/>
+  <path d="M320 30 L325 10 L315 15 Z" fill="#FFD60A"/>
+  <path d="M360 60 L380 50 L375 65 Z" fill="#FFD60A"/>
+  <path d="M355 100 L378 115 L365 120 Z" fill="#FFD60A"/>
+  <path d="M280 60 L260 45 L270 60 Z" fill="#FFD60A"/>
+  <path d="M285 100 L262 108 L275 115 Z" fill="#FFD60A"/>
+  
+  <!-- Wobbly stick figure -->
+  <circle cx="200" cy="120" r="45" fill="none" stroke="#000" stroke-width="6" stroke-linecap="round"/>
+  <!-- Eyes - uneven -->
+  <circle cx="182" cy="110" r="8" fill="#000"/>
+  <circle cx="222" cy="115" r="6" fill="#000"/>
+  <!-- Wobbly smile -->
+  <path d="M175 140 Q200 165 230 138" stroke="#000" stroke-width="5" fill="none" stroke-linecap="round"/>
+  <!-- Body - wobbly line -->
+  <path d="M200 165 C195 200, 205 240, 198 280" stroke="#000" stroke-width="6" fill="none" stroke-linecap="round"/>
+  <!-- Arms - uneven -->
+  <path d="M200 190 C160 175, 130 200, 110 180" stroke="#000" stroke-width="6" fill="none" stroke-linecap="round"/>
+  <path d="M200 195 C240 185, 270 210, 295 195" stroke="#000" stroke-width="6" fill="none" stroke-linecap="round"/>
+  <!-- Legs - wobbly -->
+  <path d="M198 280 C180 310, 160 340, 140 370" stroke="#000" stroke-width="6" fill="none" stroke-linecap="round"/>
+  <path d="M198 280 C220 315, 240 345, 260 375" stroke="#000" stroke-width="6" fill="none" stroke-linecap="round"/>
+  
+  <!-- Messy grass scribbles at bottom -->
+  <path d="M10 380 C20 360, 30 380, 40 355" stroke="#06FFA5" stroke-width="5" fill="none" stroke-linecap="round"/>
+  <path d="M35 385 C45 365, 55 380, 65 360" stroke="#06FFA5" stroke-width="5" fill="none" stroke-linecap="round"/>
+  <path d="M60 382 C70 362, 80 378, 90 358" stroke="#06FFA5" stroke-width="5" fill="none" stroke-linecap="round"/>
+  <path d="M85 385 C95 365, 105 382, 115 362" stroke="#06FFA5" stroke-width="5" fill="none" stroke-linecap="round"/>
+  <path d="M300 382 C310 362, 320 380, 330 358" stroke="#06FFA5" stroke-width="5" fill="none" stroke-linecap="round"/>
+  <path d="M325 385 C335 365, 345 382, 355 360" stroke="#06FFA5" stroke-width="5" fill="none" stroke-linecap="round"/>
+  <path d="M350 380 C360 360, 370 378, 385 355" stroke="#06FFA5" stroke-width="5" fill="none" stroke-linecap="round"/>
+  
+  <!-- Random flower -->
+  <circle cx="70" cy="300" r="12" fill="#FF006E"/>
+  <circle cx="55" cy="288" r="10" fill="#FFC6FF"/>
+  <circle cx="85" cy="288" r="10" fill="#FFC6FF"/>
+  <circle cx="58" cy="312" r="10" fill="#FFC6FF"/>
+  <circle cx="82" cy="312" r="10" fill="#FFC6FF"/>
+  <path d="M70 312 C68 340, 72 360, 65 380" stroke="#06FFA5" stroke-width="4" fill="none"/>
+</svg>
