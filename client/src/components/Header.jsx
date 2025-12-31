@@ -9,6 +9,7 @@ function Header() {
         <Link to="/gallery">Gallery</Link>
         <Link to="/hall-of-fame">Hall of Fame</Link>
         <Link to="/whitepaper">Whitepaper</Link>
+        <a href="https://x.com/DecideTheValue" target="_blank" rel="noopener noreferrer" className="twitter-link">Twitter</a>
         <Link to="/create" className="create-btn">Create ART</Link>
       </nav>
     </header>

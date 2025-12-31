@@ -42,6 +42,11 @@ nav a:hover {
   transform: rotate(1deg);
 }
 
+.twitter-link {
+  background: #1DA1F2 !important;
+  color: #FFF !important;
+}
+
 .create-btn {
   background: #06FFA5 !important;
   color: #000 !important;
