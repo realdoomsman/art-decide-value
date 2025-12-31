@@ -19,12 +19,28 @@ function HomePage() {
     fetchArt()
   }, [])
 
+  const copyCA = () => {
+    navigator.clipboard.writeText('TBA')
+    alert('Contract address copied!')
+  }
+
   return (
     <div className="home-page">
       <section className="hero">
         <h1 className="hero-title">Worthless-looking art has value because people decide it.</h1>
         <p className="hero-subtitle">Draw. Publish. Let the world decide.</p>
         <Link to="/create" className="cta-button">Create ART</Link>
+      </section>
+
+      <section className="token-section">
+        <h2>$VALUE Token</h2>
+        <div className="ca-box">
+          <span className="ca-label">Contract Address:</span>
+          <code className="ca-address">TBA - Coming Soon</code>
+          <button onClick={copyCA} className="copy-btn">Copy</button>
+        </div>
+        <p className="token-desc">The top 30 most-liked artworks will be minted into an official NFT collection.</p>
+        <Link to="/whitepaper" className="whitepaper-link">Read the Whitepaper</Link>
       </section>
 
       <section className="recent-art">

@@ -5,6 +5,7 @@ import PublishPage from './pages/PublishPage'
 import GalleryPage from './pages/GalleryPage'
 import ArtPage from './pages/ArtPage'
 import HallOfFamePage from './pages/HallOfFamePage'
+import WhitepaperPage from './pages/WhitepaperPage'
 import Header from './components/Header'
 
 function App() {
@@ -18,6 +19,7 @@ function App() {
         <Route path="/gallery" element={<GalleryPage />} />
         <Route path="/art/:id" element={<ArtPage />} />
         <Route path="/hall-of-fame" element={<HallOfFamePage />} />
+        <Route path="/whitepaper" element={<WhitepaperPage />} />
       </Routes>
     </BrowserRouter>
   )
