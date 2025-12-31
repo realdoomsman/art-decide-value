@@ -1,0 +1,109 @@
+.hall-of-fame-page {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 2rem;
+}
+
+.hof-header {
+  text-align: center;
+  margin-bottom: 3rem;
+}
+
+.hof-header h1 {
+  font-size: 3rem;
+  background: linear-gradient(135deg, #FFD700, #FFA500);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  margin-bottom: 0.5rem;
+}
+
+.hof-header p {
+  color: #666;
+  font-size: 1.2rem;
+}
+
+.hof-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  gap: 1.5rem;
+}
+
+.hof-card {
+  position: relative;
+  background: white;
+  border-radius: 16px;
+  overflow: hidden;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+  transition: transform 0.2s, box-shadow 0.2s;
+  text-decoration: none;
+  color: inherit;
+}
+
+.hof-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.15);
+}
+
+.rank {
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  background: linear-gradient(135deg, #FFD700, #FFA500);
+  color: white;
+  font-weight: bold;
+  padding: 0.5rem 0.75rem;
+  border-radius: 8px;
+  font-size: 1rem;
+  z-index: 1;
+}
+
+.hof-card:nth-child(1) .rank {
+  background: linear-gradient(135deg, #FFD700, #FFC107);
+  font-size: 1.2rem;
+}
+
+.hof-card:nth-child(2) .rank {
+  background: linear-gradient(135deg, #C0C0C0, #A8A8A8);
+}
+
+.hof-card:nth-child(3) .rank {
+  background: linear-gradient(135deg, #CD7F32, #B87333);
+}
+
+.hof-card img {
+  width: 100%;
+  aspect-ratio: 1;
+  object-fit: cover;
+}
+
+.hof-info {
+  padding: 1rem;
+}
+
+.hof-info h3 {
+  margin: 0 0 0.5rem 0;
+  font-size: 1.1rem;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.hof-info .likes {
+  color: #FF6B9D;
+  font-weight: 600;
+}
+
+.empty {
+  text-align: center;
+  color: #999;
+  font-size: 1.2rem;
+  padding: 3rem;
+}
+
+.loading {
+  text-align: center;
+  padding: 3rem;
+  font-size: 1.2rem;
+  color: #666;
+}
