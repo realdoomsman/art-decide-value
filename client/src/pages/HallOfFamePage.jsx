@@ -1,5 +1,6 @@
 import { useState, useEffect } from 'react'
 import { Link } from 'react-router-dom'
+import { supabase } from '../lib/supabase'
 import './HallOfFamePage.css'
 
 function HallOfFamePage() {
@@ -7,16 +8,17 @@ function HallOfFamePage() {
   const [loading, setLoading] = useState(true)
 
   useEffect(() => {
-    fetch('/api/art?sort=popular&limit=20')
-      .then(res => res.json())
-      .then(data => {
-        setTopArt(data)
-        setLoading(false)
-      })
-      .catch(err => {
-        console.error(err)
-        setLoading(false)
-      })
+    const fetchTopArt = async () => {
+      const { data, error } = await supabase
+        .from('artworks')
+        .select('*')
+        .order('likes', { ascending: false })
+        .limit(20)
+      
+      if (!error && data) setTopArt(data)
+      setLoading(false)
+    }
+    fetchTopArt()
   }, [])
 
   if (loading) return <div className="loading">Loading...</div>

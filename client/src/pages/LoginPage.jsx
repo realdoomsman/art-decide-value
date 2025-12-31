@@ -1,41 +1,46 @@
 import { useState } from 'react'
 import { useNavigate } from 'react-router-dom'
+import { supabase } from '../lib/supabase'
 import './LoginPage.css'
 
 function LoginPage() {
-  const [username, setUsername] = useState('')
+  const [email, setEmail] = useState('')
   const [password, setPassword] = useState('')
   const [isSignup, setIsSignup] = useState(false)
+  const [loading, setLoading] = useState(false)
   const navigate = useNavigate()
 
   const handleSubmit = async (e) => {
     e.preventDefault()
 
-    if (!username.trim() || !password.trim()) {
+    if (!email.trim() || !password.trim()) {
       alert('Please fill in all fields')
       return
     }
 
+    setLoading(true)
+
     try {
-      const endpoint = isSignup ? '/api/auth/signup' : '/api/auth/login'
-      const response = await fetch(endpoint, {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ username, password })
-      })
-
-      const data = await response.json()
-
-      if (response.ok) {
-        localStorage.setItem('user', JSON.stringify({ username: data.username }))
+      if (isSignup) {
+        const { data, error } = await supabase.auth.signUp({
+          email,
+          password
+        })
+        if (error) throw error
+        alert('Check your email for confirmation link!')
+      } else {
+        const { data, error } = await supabase.auth.signInWithPassword({
+          email,
+          password
+        })
+        if (error) throw error
         navigate('/')
         window.location.reload()
-      } else {
-        alert(data.error || 'Authentication failed')
       }
     } catch (err) {
-      console.error(err)
-      alert('Something went wrong. Please try again.')
+      alert(err.message || 'Authentication failed')
+    } finally {
+      setLoading(false)
     }
   }
 
@@ -46,10 +51,10 @@ function LoginPage() {
         
         <form onSubmit={handleSubmit}>
           <input
-            type="text"
-            placeholder="Username"
-            value={username}
-            onChange={(e) => setUsername(e.target.value)}
+            type="email"
+            placeholder="Email"
+            value={email}
+            onChange={(e) => setEmail(e.target.value)}
           />
           
           <input
@@ -59,8 +64,8 @@ function LoginPage() {
             onChange={(e) => setPassword(e.target.value)}
           />
 
-          <button type="submit" className="submit-btn">
-            {isSignup ? 'Create Account' : 'Login'}
+          <button type="submit" className="submit-btn" disabled={loading}>
+            {loading ? 'Loading...' : (isSignup ? 'Create Account' : 'Login')}
           </button>
         </form>
 

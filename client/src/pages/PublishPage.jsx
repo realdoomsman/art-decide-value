@@ -1,5 +1,6 @@
 import { useState, useEffect } from 'react'
 import { useNavigate } from 'react-router-dom'
+import { supabase } from '../lib/supabase'
 import './PublishPage.css'
 
 function PublishPage() {
@@ -23,25 +24,26 @@ function PublishPage() {
       return
     }
 
-    try {
-      const response = await fetch('/api/art', {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({
-          title,
-          description,
-          imageUrl: imageData,
-          artist: 'Anonymous'
-        })
+    const { data, error } = await supabase
+      .from('artworks')
+      .insert({
+        title,
+        description,
+        image_url: imageData,
+        artist: 'Anonymous',
+        likes: 0
       })
+      .select()
+      .single()
 
-      const data = await response.json()
-      localStorage.removeItem('currentDrawing')
-      navigate(`/art/${data.id}`)
-    } catch (err) {
-      console.error(err)
+    if (error) {
+      console.error(error)
       alert('Failed to publish. Please try again.')
+      return
     }
+
+    localStorage.removeItem('currentDrawing')
+    navigate(`/art/${data.id}`)
   }
 
   return (

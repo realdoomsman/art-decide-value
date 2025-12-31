@@ -1,5 +1,6 @@
 import { useState, useEffect } from 'react'
-import { useParams, Link } from 'react-router-dom'
+import { useParams } from 'react-router-dom'
+import { supabase } from '../lib/supabase'
 import './ArtPage.css'
 
 function ArtPage() {
@@ -15,55 +16,55 @@ function ArtPage() {
   }, [id])
 
   const fetchArt = async () => {
-    try {
-      const response = await fetch(`/api/art/${id}`)
-      const data = await response.json()
-      setArt(data)
-    } catch (err) {
-      console.error(err)
-    }
+    const { data, error } = await supabase
+      .from('artworks')
+      .select('*')
+      .eq('id', id)
+      .single()
+    
+    if (!error && data) setArt(data)
   }
 
   const fetchComments = async () => {
-    try {
-      const response = await fetch(`/api/art/${id}/comments`)
-      const data = await response.json()
-      setComments(data)
-    } catch (err) {
-      console.error(err)
-    }
+    const { data, error } = await supabase
+      .from('comments')
+      .select('*')
+      .eq('artwork_id', id)
+      .order('created_at', { ascending: true })
+    
+    if (!error && data) setComments(data)
   }
 
   const handleLike = async () => {
-    if (hasLiked) return
+    if (hasLiked || !art) return
     
-    try {
-      await fetch(`/api/art/${id}/like`, { method: 'POST' })
+    const { error } = await supabase
+      .from('artworks')
+      .update({ likes: art.likes + 1 })
+      .eq('id', id)
+    
+    if (!error) {
       setArt(prev => ({ ...prev, likes: prev.likes + 1 }))
       setHasLiked(true)
-    } catch (err) {
-      console.error(err)
     }
   }
 
   const handleComment = async () => {
     if (!newComment.trim()) return
 
-    try {
-      const response = await fetch(`/api/art/${id}/comments`, {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({
-          username: 'Anonymous',
-          text: newComment
-        })
+    const { data, error } = await supabase
+      .from('comments')
+      .insert({
+        artwork_id: id,
+        username: 'Anonymous',
+        text: newComment
       })
-      
-      const comment = await response.json()
-      setComments([...comments, comment])
+      .select()
+      .single()
+    
+    if (!error && data) {
+      setComments([...comments, data])
       setNewComment('')
-    } catch (err) {
-      console.error(err)
     }
   }
 

@@ -1,38 +1,29 @@
 import { useState, useEffect } from 'react'
 import { useParams, Link } from 'react-router-dom'
+import { supabase } from '../lib/supabase'
 import './ProfilePage.css'
 
 function ProfilePage() {
   const { username } = useParams()
-  const [profile, setProfile] = useState(null)
   const [userArt, setUserArt] = useState([])
+  const [loading, setLoading] = useState(true)
 
   useEffect(() => {
-    fetchProfile()
     fetchUserArt()
   }, [username])
 
-  const fetchProfile = async () => {
-    try {
-      const response = await fetch(`/api/users/${username}`)
-      const data = await response.json()
-      setProfile(data)
-    } catch (err) {
-      console.error(err)
-    }
-  }
-
   const fetchUserArt = async () => {
-    try {
-      const response = await fetch(`/api/art?artist=${username}`)
-      const data = await response.json()
-      setUserArt(data)
-    } catch (err) {
-      console.error(err)
-    }
+    const { data, error } = await supabase
+      .from('artworks')
+      .select('*')
+      .eq('artist', username)
+      .order('created_at', { ascending: false })
+    
+    if (!error && data) setUserArt(data)
+    setLoading(false)
   }
 
-  if (!profile) return <div className="loading">Loading...</div>
+  if (loading) return <div className="loading">Loading...</div>
 
   const totalLikes = userArt.reduce((sum, art) => sum + art.likes, 0)
 
@@ -60,7 +51,7 @@ function ProfilePage() {
         <div className="art-grid">
           {userArt.map(art => (
             <Link to={`/art/${art.id}`} key={art.id} className="art-card">
-              <img src={art.imageUrl} alt={art.title} />
+              <img src={art.image_url} alt={art.title} />
               <div className="art-info">
                 <h3>{art.title}</h3>
                 <span>❤️ {art.likes}</span>

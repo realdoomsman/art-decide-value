@@ -1,5 +1,6 @@
 import { useState, useEffect } from 'react'
 import { Link } from 'react-router-dom'
+import { supabase } from '../lib/supabase'
 import './GalleryPage.css'
 
 function GalleryPage() {
@@ -11,12 +12,20 @@ function GalleryPage() {
   }, [filter])
 
   const fetchArt = async () => {
-    try {
-      const response = await fetch(`/api/art?sort=${filter}`)
-      const data = await response.json()
+    let query = supabase.from('artworks').select('*')
+
+    if (filter === 'newest') {
+      query = query.order('created_at', { ascending: false })
+    } else if (filter === 'popular') {
+      query = query.order('likes', { ascending: false })
+    }
+
+    const { data, error } = await query
+
+    if (filter === 'random' && data) {
+      setArt(data.sort(() => Math.random() - 0.5))
+    } else if (!error && data) {
       setArt(data)
-    } catch (err) {
-      console.error(err)
     }
   }
 

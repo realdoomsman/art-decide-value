@@ -1,15 +1,22 @@
 import { Link } from 'react-router-dom'
 import { useState, useEffect } from 'react'
+import { supabase } from '../lib/supabase'
 import './HomePage.css'
 
 function HomePage() {
   const [recentArt, setRecentArt] = useState([])
 
   useEffect(() => {
-    fetch('/api/art?limit=6')
-      .then(res => res.json())
-      .then(data => setRecentArt(data))
-      .catch(err => console.error(err))
+    const fetchArt = async () => {
+      const { data, error } = await supabase
+        .from('artworks')
+        .select('*')
+        .order('created_at', { ascending: false })
+        .limit(6)
+      
+      if (!error && data) setRecentArt(data)
+    }
+    fetchArt()
   }, [])
 
   return (
