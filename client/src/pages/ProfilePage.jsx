@@ -54,7 +54,7 @@ function ProfilePage() {
               <img src={art.image_url} alt={art.title} />
               <div className="art-info">
                 <h3>{art.title}</h3>
-                <span>❤️ {art.likes}</span>
+                <span>{art.likes} likes</span>
               </div>
             </Link>
           ))}

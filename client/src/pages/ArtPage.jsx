@@ -89,13 +89,10 @@ function ArtPage() {
 
         <div className="actions">
           <button onClick={handleLike} className={`like-btn ${hasLiked ? 'liked' : ''}`}>
-            ❤️ {art.likes}
+            {art.likes} likes
           </button>
           <button onClick={handleShare} className="share-btn">
-            🔗 Share
-          </button>
-          <button className="mint-btn" disabled>
-            🪙 Mint NFT (Coming Soon)
+            Share
           </button>
         </div>
 

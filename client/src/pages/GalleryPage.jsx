@@ -61,7 +61,7 @@ function GalleryPage() {
             <div className="card-info">
               <h3>{item.title}</h3>
               <p>by {item.artist}</p>
-              <span>❤️ {item.likes}</span>
+              <span>{item.likes} likes</span>
             </div>
           </Link>
         ))}

@@ -26,8 +26,8 @@ function HallOfFamePage() {
   return (
     <div className="hall-of-fame-page">
       <div className="hof-header">
-        <h1>🏆 Hall of Fame</h1>
-        <p>The most loved artworks. Top picks get minted into the official NFT collection.</p>
+        <h1>Hall of Fame</h1>
+        <p>The most loved artworks. The top 30 images will be added to an official NFT collection.</p>
       </div>
 
       <div className="hof-grid">
@@ -37,7 +37,7 @@ function HallOfFamePage() {
             <img src={art.image_url} alt={art.title} />
             <div className="hof-info">
               <h3>{art.title}</h3>
-              <span className="likes">❤️ {art.likes}</span>
+              <span className="likes">{art.likes} likes</span>
             </div>
           </Link>
         ))}

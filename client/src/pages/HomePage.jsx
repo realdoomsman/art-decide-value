@@ -36,7 +36,7 @@ function HomePage() {
               <div className="art-info">
                 <h3>{art.title}</h3>
                 <p>by {art.artist}</p>
-                <span>❤️ {art.likes}</span>
+                <span>{art.likes} likes</span>
               </div>
             </Link>
           ))}
