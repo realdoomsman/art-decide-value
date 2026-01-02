@@ -38,19 +38,23 @@ function WhitepaperPage() {
         </section>
 
         <section>
+          <h2>Tech stack</h2>
+          <p>Frontend: React + Vite, hosted on Vercel</p>
+          <p>Database: Supabase (PostgreSQL) — stores all the art, likes, comments</p>
+          <p>Auth: Supabase Auth for accounts</p>
+          <p>Images: Stored as base64 directly in the database</p>
+          <p>
+            No hidden algorithms. Sorting is just newest, most liked, or random. 
+            What you see is what everyone sees.
+          </p>
+        </section>
+
+        <section>
           <h2>$VALUE token</h2>
           <div className="token-info">
             <p><strong>CA:</strong></p>
             <p className="ca">TBA</p>
           </div>
-        </section>
-
-        <section>
-          <h2>Roadmap</h2>
-          <p>Phase 1: Launch the site, launch the token</p>
-          <p>Phase 2: Get people drawing and voting</p>
-          <p>Phase 3: Mint the top 100 as NFTs</p>
-          <p>Phase 4: See what happens next</p>
         </section>
 
         <section>
