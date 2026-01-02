@@ -53,7 +53,7 @@ function WhitepaperPage() {
           <h2>$VALUE token</h2>
           <div className="token-info">
             <p><strong>CA:</strong></p>
-            <p className="ca">TBA</p>
+            <p className="ca">Bk1LkeQbQa7KrYfdBsyJQavXnrjTLwMUW19Co3u3pump</p>
           </div>
         </section>
 

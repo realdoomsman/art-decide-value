@@ -20,7 +20,7 @@ function HomePage() {
   }, [])
 
   const copyCA = () => {
-    navigator.clipboard.writeText('TBA')
+    navigator.clipboard.writeText('Bk1LkeQbQa7KrYfdBsyJQavXnrjTLwMUW19Co3u3pump')
     alert('Contract address copied!')
   }
 
@@ -36,7 +36,7 @@ function HomePage() {
         <h2>$VALUE Token</h2>
         <div className="ca-box">
           <span className="ca-label">Contract Address:</span>
-          <code className="ca-address">TBA - Coming Soon</code>
+          <code className="ca-address">Bk1LkeQbQa7KrYfdBsyJQavXnrjTLwMUW19Co3u3pump</code>
           <button onClick={copyCA} className="copy-btn">Copy</button>
         </div>
         <p className="token-desc">The top 100 most-liked artworks will be minted into an official NFT collection.</p>
